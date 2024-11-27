@@ -1,0 +1,4 @@
+studentId:2413111143
+studentName:Siriyakorn Mekchay
+Topic:Display, Variable and Input
+Date:11/27/2024
