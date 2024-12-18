@@ -1,26 +1,48 @@
-import java.util.*;
-public class Lab303 {
+import java.util.Scanner;
 
-	public static void main(String[] args) {
-		
-		Scanner scan = new Scanner(System.in);
+public class Lab303 
+{
+    public static void main(String[] args) 
+    {
+    	Scanner scan = new Scanner(System.in);
+		String sentence ;
 		
 		System.out.print("Input a sentence : ");
-		String inputSentence = scan.next();
-		
-		while(inputSentence.endsWith(".")) {
-			inputEmail = JOptionPane.showInputDialog("Input your e-mail,again : ");
-
+		sentence = scan.nextLine();
+		while(!(sentence.endsWith(".")))
+		{
+			System.out.print("Input a sentence, again : ");
+			sentence = scan.nextLine();
 		}
-		
-		if(inputEmail.endsWith("@gmail.com")||inputEmail.endsWith("hotmail.com")) {
-			JOptionPane.showMessageDialog(null, "Your e-mail is "+inputEmail);
-		}
-		else {
-			JOptionPane.showMessageDialog(null, "Your e-mail is not hotmail pr gmail dot com");
-		}
+        int spaceCount = 0;
+        int wordCount = 0;
+        boolean inWord = false;
 
+        for (int i = 0; i < sentence.length(); i++) 
+        {
+            char c = sentence.charAt(i);
 
-	}
+            if (c == ' ') 
+            {
+                spaceCount++;
+            }
 
+            if (c != ' ' && c != '.') 
+            {
+                if (!inWord) 
+                {
+                    wordCount++;
+                    inWord = true;
+                }
+            } 
+            else 
+            {
+                inWord = false;
+            }
+        }
+
+        System.out.println("\nThis sentence has " + spaceCount + " spacebar.");
+        System.out.println("This sentence has " + wordCount + " word.");
+        scan.close();
+    }
 }
