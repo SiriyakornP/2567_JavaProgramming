@@ -14,8 +14,18 @@ public class Product {
 	public void setUnit(int ProdUnit) {
 		ProdUnit = productUnit;
 	}
-	getUnit
-	setPrice
-	getPricce
-	calculate
+	public int getUnit() {
+		return productUnit;
+	}
+	
+	public void setPrice(double prodPrice) {
+		prodPrice = productPrice;
+	}
+	public double getPrice() {
+		return productPrice;
+	}
+	
+	public double calculate() {
+		return productUnit * productPrice;
+	}
 }
